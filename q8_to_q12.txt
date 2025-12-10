@@ -1,0 +1,80 @@
+Que 8. What is the significance of “%” and “_” operators in the LIKE statement?
+
+Ans: The % (percent) operator matches zero, one, or multiple characters of any type. It is used for variable-length pattern matching.
+The _ (underscore) operator matches exactly one single character of any type. It is used for fixed-length pattern matching.
+
+Examples:
+→ name LIKE "a%" : Names starting with 'a' (any number of letters after).
+→ name LIKE "%a" : Names ending with 'a'.
+→ name LIKE "a___" : Names that start with 'a' and have exactly 4 characters in total.
+
+Que 9. Explain normalization in the context of databases.
+
+Ans: Database normalization is the process of organizing data in a relational database to reduce redundancy, minimize anomalies, and improve data integrity.
+Normalization is needed to avoid data duplication, insertion/deletion/update anomalies, and to manage relationships efficiently.
+
+First Normal Form (1NF):
+
+All values are atomic (indivisible).
+
+Each row is unique.
+
+Each column has a unique name.
+
+Order of data does not matter.
+Example violation: Multiple phone numbers stored in one cell.
+
+Second Normal Form (2NF):
+
+Must be in 1NF.
+
+No partial dependency: every non-key attribute must depend on the whole primary key.
+Example: If StudentName depends only on StudentID (part of a composite key), it violates 2NF.
+
+Third Normal Form (3NF):
+
+Must be in 2NF.
+
+No transitive dependency: non-key attributes should not depend on other non-key attributes.
+Example: Instructor depends on CourseID, which depends on StudentID.
+
+In simple words: Normalization organizes data to avoid duplication and store it efficiently.
+
+Que 10. What does a JOIN in MySQL mean?
+
+Ans: A JOIN in MySQL is used to combine rows from two or more tables based on a related column.
+For example, Customers and Orders tables can be joined using CustomerID.
+JOIN helps retrieve related data from multiple tables in a single query, and conditions or grouping can be applied after joining.
+
+Que 11. What do you understand about DDL, DCL, and DML in MySQL?
+
+Ans:
+DDL (Data Definition Language):
+Used to define or modify database structure. Examples: CREATE, ALTER, DROP.
+
+DML (Data Manipulation Language):
+Used to manipulate data in tables. Examples: INSERT, UPDATE, DELETE, SELECT.
+
+DCL (Data Control Language):
+Used to control access and permissions in a database.
+
+GRANT: Gives permissions.
+
+REVOKE: Removes permissions.
+
+DENY: Explicitly blocks permissions.
+
+Que 12. What is the role of the MySQL JOIN clause in a query,
+and what are some common types of joins?
+
+Ans: The JOIN clause combines data from multiple tables based on related columns.
+
+Common types of joins:
+
+INNER JOIN: Returns rows that have matching values in both tables.
+
+LEFT JOIN (LEFT OUTER JOIN): Returns all rows from the left table and matching rows from the right table; unmatched right-side values appear as NULL.
+
+RIGHT JOIN (RIGHT OUTER JOIN): Returns all rows from the right table and matching rows from the left table; unmatched left-side values appear as NULL.
+
+SELF JOIN: A table is joined with itself using aliases; used for comparing rows within the same table (e.g., employees with the same manager).
